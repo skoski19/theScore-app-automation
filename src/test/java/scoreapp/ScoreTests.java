@@ -7,7 +7,11 @@ import org.testng.annotations.Test;
 
 import io.appium.java_client.AppiumBy;
 import pageObjects.FavoriteLeaguesPage;
+import pageObjects.FavoriteTeamsPage;
 import pageObjects.HomePage;
+import pageObjects.Never;
+import pageObjects.NeverMissGamePage;
+import pageObjects.a;
             
 public class ScoreTests  extends TestBase{
 
@@ -33,6 +37,9 @@ public class ScoreTests  extends TestBase{
 	{
 		HomePage homePage = new HomePage(driver);
 		FavoriteLeaguesPage leaguesPage = new FavoriteLeaguesPage(driver);
+		FavoriteTeamsPage teamsPage = new FavoriteTeamsPage(driver);
+		NeverMissGamePage gamePage = new NeverMissGamePage(driver);
+		
 		homePage.getStarted();
 		
 		leaguesPage.selectLeagues("NFL Football");
@@ -48,6 +55,21 @@ public class ScoreTests  extends TestBase{
 //		Assert.assertEquals(leaguesPage.f1Icon.getText(), "F1");
 		
 		leaguesPage.continueButton.click();
+		
+		leaguesPage.dismissPopUp();
+		
+		Assert.assertEquals(teamsPage.favoriteTeams.getText(), "Choose your favorite teams");
+		
+		teamsPage.scrollToText("Pittsburgh Steelers");
+		Assert.assertEquals(teamsPage.pittsburghIcon.getText(), "PIT");
+		teamsPage.continueButton.click();
+		
+		Assert.assertEquals(gamePage.missGame.getText(), "Never miss a game");
+		
+		gamePage.doneButton.click();
+		
+		gamePage.dismissNotificationPopUp();
+		
 		
 		///NEXT TO CODE
 		//Select a team - Pittsburgh Steelers
