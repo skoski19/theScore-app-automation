@@ -30,7 +30,8 @@ public class TestBase extends AppiumUtil{
 		UiAutomator2Options options = new UiAutomator2Options();
 		options.setDeviceName("Pixel 8");
 		options.setApp("C:\\gitRepos\\theScore-app-automation\\src\\test\\java\\resources\\theScore_2440.apk");
-		options.setCapability("autoGrantPermissions", "true");
+		options.setCapability("autoGrantPermissions", true);
+		options.setCapability("autoAcceptAlerts", true);
 		driver = new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(), options);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 

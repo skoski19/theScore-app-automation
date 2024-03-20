@@ -55,15 +55,9 @@ public class FavoriteLeaguesPage extends AndroidActions {
 			maybeLaterButton.click();
 		}
 	}
-	//android.widget.TextView[@resource-id="com.fivemobile.thescore:id/label" and @text="NFL"]
+
 	public void selectLeagues(String league)
 	{
-		scrollToText(league);
-		
-		//driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\""+league+"\").instance(0))")).click();
-		
-//		String welcome = driver.findElement(AppiumBy.id("com.fivemobile.thescore:id/txt_welcome")).getText();
-//		Assert.assertEquals(welcome, "WELCOME");
-		
+		scrollToText(league);		
 	}
 }
