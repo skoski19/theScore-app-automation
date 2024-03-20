@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
@@ -29,10 +30,30 @@ public class FavoriteLeaguesPage extends AndroidActions {
 	@AndroidFindBy(id = "com.fivemobile.thescore:id/recyclerView")
 	public WebElement leagueList;
 	
+	@AndroidFindBy(id = "com.fivemobile.thescore:id/icon")
+	public WebElement favoriteIcon;
 	
+	@AndroidFindBy(xpath="//android.widget.TextView[@resource-id=\"com.fivemobile.thescore:id/label\" and @text=\"NASCAR\"]")
+	public WebElement nascarIcon;
+	
+	@AndroidFindBy(xpath="//android.widget.TextView[@resource-id=\"com.fivemobile.thescore:id/label\" and @text=\"NFL\"]")
+	public WebElement nflIcon;
+	
+	@AndroidFindBy(xpath="//android.widget.TextView[@resource-id=\"com.fivemobile.thescore:id/label\" and @text=\"F1\"]")
+	public WebElement f1Icon;
+	
+	@AndroidFindBy(xpath="//android.widget.TextView[@resource-id=\"com.fivemobile.thescore:id/label\" and @text=\"WNBA\"]")
+	public WebElement wnbaIcon;
+	
+	//android.widget.TextView[@resource-id="com.fivemobile.thescore:id/label" and @text="NFL"]
 	public void selectLeagues(String league)
 	{
-		driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\""+league+"\").instance(0))")).click();
+		scrollToText(league);
+		
+		//driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\""+league+"\").instance(0))")).click();
+		
+//		String welcome = driver.findElement(AppiumBy.id("com.fivemobile.thescore:id/txt_welcome")).getText();
+//		Assert.assertEquals(welcome, "WELCOME");
 		
 	}
 }

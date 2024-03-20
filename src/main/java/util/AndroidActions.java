@@ -41,9 +41,10 @@ public class AndroidActions extends AppiumUtil {
 	
 		public void scrollToText(String text)
 		{
+			driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\""+text+"\").instance(0))")).click();
 			//driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().scrollable(true).resourceIdMatches(\".*id/recyclerView\")"));
 					
-			driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollable(true).scrollIntoView(text(\""+text+"\"));"));
+			//driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollable(true).scrollIntoView(text(\""+text+"\"));"));
 		}
 	
 	public void swipeAction(WebElement ele,String direction)
