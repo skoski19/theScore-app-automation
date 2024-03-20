@@ -1,7 +1,5 @@
 package util;
 
-import java.util.NoSuchElementException;
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -12,7 +10,7 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 
 public class AndroidActions extends AppiumUtil {
-	AndroidDriver driver;
+	protected AndroidDriver driver;
 	
 	public AndroidActions(AndroidDriver driver)
 	{
@@ -42,9 +40,6 @@ public class AndroidActions extends AppiumUtil {
 		public void scrollToText(String text)
 		{
 			driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\""+text+"\").instance(0))")).click();
-			//driver.findElement(AppiumBy.androidUIAutomator("new UiSelector().scrollable(true).resourceIdMatches(\".*id/recyclerView\")"));
-					
-			//driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollable(true).scrollIntoView(text(\""+text+"\"));"));
 		}
 	
 	public void swipeAction(WebElement ele,String direction)
