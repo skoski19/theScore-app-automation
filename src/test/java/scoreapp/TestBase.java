@@ -29,7 +29,8 @@ public class TestBase extends AppiumUtil{
 				
 		UiAutomator2Options options = new UiAutomator2Options();
 		options.setDeviceName("Pixel 3a");
-		options.setApp("C:\\gitRepos\\theScore-app-automation\\src\\test\\java\\resources\\theScore_2440.apk");
+		File app = new File(System.getProperty("user.dir")+ "/src/test/java/resources/theScore_2440.apk");
+		options.setApp(app.getAbsolutePath());
 		options.setCapability("autoGrantPermissions", true);
 		options.setCapability("autoAcceptAlerts", true);
 		driver = new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(), options);
