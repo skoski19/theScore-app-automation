@@ -33,16 +33,6 @@ public class HomePage extends AndroidActions {
 	@AndroidFindBy(id="com.fivemobile.thescore:id/txt_terms")
 	public WebElement termsLink;
 
-	
-	public void validateHomePage()
-	{
-		Assert.assertTrue(scoreLogo.isDisplayed());
-		Assert.assertTrue(welcomeText.isDisplayed());
-		Assert.assertTrue(loginLink.isDisplayed());
-		 Assert.assertTrue(getStartedButton.isDisplayed());
-		 Assert.assertTrue(termsLink.isDisplayed());
-	}
-
 	public void getStarted()
 	{
 		getStartedButton.click();
