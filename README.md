@@ -3,7 +3,7 @@
 ## Automation for theScore app with Android testing using Appium, Java, TestNG and Maven
 This project is the foundation for an automation suite with the Score app and Android tests.  
 
-The tests use page object model design pattern, makes the test automation framework programmer-friendly by keeping tests and the element locators separate. This keeps the code clean and understandable. The result is that test cases can easily be implemented, updated, maintained, and reused.
+The framework uses a  page object model design pattern, which makes the test automation programmer-friendly by keeping tests and the element locators separate. This keeps the code clean and understandable. The result is that test cases can easily be implemented, updated, maintained, and reused.
 
 ## PreRequisites
 - [JAVA 11](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html)
