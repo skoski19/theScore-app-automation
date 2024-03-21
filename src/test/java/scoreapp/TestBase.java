@@ -23,8 +23,10 @@ public class TestBase extends AppiumUtil{
 	@BeforeClass(alwaysRun=true)
 	public void configureAppium() throws MalformedURLException, URISyntaxException  
 	{
-		service = new AppiumServiceBuilder().withAppiumJS(new File("C:\\Users\\Suki\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
-				.withIPAddress("127.0.0.1").usingPort(4723).build();
+		AppiumServiceBuilder builder = new AppiumServiceBuilder();
+		builder.withIPAddress("127.0.0.1");
+		builder.usingPort(4723);
+		service = AppiumDriverLocalService.buildService(builder);
 		service.start();
 				
 		UiAutomator2Options options = new UiAutomator2Options();
