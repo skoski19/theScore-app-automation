@@ -32,7 +32,5 @@ public class FavoritesPage extends AndroidActions {
 	
 	@AndroidFindBy(id="com.fivemobile.thescore:id/navigation_leagues")
 	public WebElement leagues;
-	
 
-	//android.widget.TextView[@resource-id="com.fivemobile.thescore:id/navigation_bar_item_small_label_view" and @text="Favorites"]
 }
