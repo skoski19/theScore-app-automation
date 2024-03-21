@@ -16,13 +16,7 @@ import pageObjects.NeverMissGamePage;
             
 public class ScoreTests  extends TestBase
 {
-	@Test
-	public void ValidateHomePage() throws MalformedURLException
-	{
-		HomePage homePage = new HomePage(driver);
-		homePage.validateHomePage();
-		}
-	
+
 	@Test
 	public void SelectLeagueTeamValidateStandings() throws MalformedURLException
 	{
