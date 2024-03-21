@@ -28,7 +28,7 @@ public class TestBase extends AppiumUtil{
 		service.start();
 				
 		UiAutomator2Options options = new UiAutomator2Options();
-		options.setDeviceName("Pixel 8");
+		options.setDeviceName("Pixel 3a");
 		options.setApp("C:\\gitRepos\\theScore-app-automation\\src\\test\\java\\resources\\theScore_2440.apk");
 		options.setCapability("autoGrantPermissions", true);
 		options.setCapability("autoAcceptAlerts", true);
